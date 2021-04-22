@@ -111,7 +111,7 @@ def find_stops(trip):
                         y_max = np.max(trip.gps_trace['latitude'][start_events[i]:end_events[i]])
                         coverage = gc(x_min, y_max, x_max, y_min)
                         if coverage <= trip.stops_parameters['max stop coverage']:
-                            trip.gps_trace.ix[start_events[i]:end_events[i],'delivery_stop'] = 1
+                            trip.gps_trace.loc[start_events[i]:end_events[i],'delivery_stop'] = 1
                             x_avg = np.average(trip.gps_trace['longitude'][start_events[i]:end_events[i]])
                             y_avg = np.average(trip.gps_trace['latitude'][start_events[i]:end_events[i]])
                             stop_time = trip.gps_trace.timestamp[start_events[i]]

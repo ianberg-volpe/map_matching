@@ -61,3 +61,4 @@ docs/source/_generated/*
 
 #Virtual environment
 .venv/
+map_matching/__pycache__/*
